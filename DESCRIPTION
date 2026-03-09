@@ -19,6 +19,8 @@ Description: Implements the multivariate autoregressive distributed lag (ARDL)
     AIC/BIC, diagnostic tests, and comprehensive inference tables following 
     the four-case framework.
 License: GPL-3
+URL: https://github.com/muhammedalkhalaf/mvardlurt
+BugReports: https://github.com/muhammedalkhalaf/mvardlurt/issues
 Encoding: UTF-8
 RoxygenNote: 7.3.2
 Depends: 
