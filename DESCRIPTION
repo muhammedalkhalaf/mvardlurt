@@ -1,0 +1,35 @@
+Package: mvardlurt
+Type: Package
+Title: Multivariate ARDL Unit Root Test
+Version: 1.0.0
+Authors@R: c(
+    person("Muhammad", "Alkhalaf", 
+           email = "muhammedalkhalaf@gmail.com",
+           role = c("aut", "cre", "cph"),
+           comment = c(ORCID = "0009-0002-2677-9246")),
+    person("Merwan", "Roudane",
+           role = "ctb",
+           comment = "Original Stata implementation"))
+Description: Implements the multivariate autoregressive distributed lag (ARDL) 
+    unit root test proposed by Sam, McNown, Goh, and Goh (2024) 
+    <doi:10.1080/03796205.2024.2439101>. The test augments the standard ADF 
+    regression with lagged levels of a covariate to improve power when 
+    cointegration exists. Bootstrap critical values ensure correct size 
+    regardless of nuisance parameters. Provides automatic lag selection via 
+    AIC/BIC, diagnostic tests, and comprehensive inference tables following 
+    the four-case framework.
+License: GPL-3
+Encoding: UTF-8
+RoxygenNote: 7.3.2
+Depends: 
+    R (>= 4.0.0)
+Imports:
+    grDevices,
+    graphics,
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
