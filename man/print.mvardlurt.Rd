@@ -62,6 +62,4 @@ head(fitted(result))
 \seealso{
 \code{\link{mvardlurt}}
 }
-\author{
-Merwan Roudane
-}
+\author{Muhammad Alkhalaf}

@@ -6,10 +6,7 @@ Authors@R: c(
     person("Muhammad", "Alkhalaf", 
            email = "muhammedalkhalaf@gmail.com",
            role = c("aut", "cre", "cph"),
-           comment = c(ORCID = "0009-0002-2677-9246")),
-    person("Merwan", "Roudane",
-           role = "ctb",
-           comment = "Original Stata implementation"))
+           comment = c(ORCID = "0009-0002-2677-9246")))
 Description: Implements the multivariate autoregressive distributed lag (ARDL) 
     unit root test proposed by Sam, McNown, Goh, and Goh (2024) 
     <doi:10.1080/03796205.2024.2439101>. The test augments the standard ADF 

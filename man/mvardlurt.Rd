@@ -117,6 +117,4 @@ print(result)
 # With fixed lags
 result2 <- mvardlurt(y, x, fixlag = c(2, 2), reps = 200)
 }
-\author{
-Merwan Roudane
-}
+\author{Muhammad Alkhalaf}

@@ -38,11 +38,7 @@ The four-case framework interprets results as:
   \item Case IV: Both accept \eqn{\rightarrow} No cointegration
 }
 }
-\author{
-Merwan Roudane
-
-Maintainer: Merwan Roudane <merwanroudane920@gmail.com>
-}
+\author{Muhammad Alkhalaf}
 \references{
 Sam, C. Y., McNown, R., Goh, S. K., & Goh, K. L. (2024). A multivariate
 autoregressive distributed lag unit root test. \emph{Studies in Economics

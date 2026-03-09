@@ -28,6 +28,4 @@ autoplot.mvardlurt(result)
 \seealso{
 \code{\link{mvardlurt}}, \code{\link{plot.mvardlurt}}
 }
-\author{
-Merwan Roudane
-}
+\author{Muhammad Alkhalaf}

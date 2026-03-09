@@ -1,7 +1,6 @@
 # mvardlurt: Multivariate ARDL Unit Root Test
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/merwanroudane/mvardlurt/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/merwanroudane/mvardlurt/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/mvardlurt)](https://CRAN.R-project.org/package=mvardlurt)
 <!-- badges: end -->
 
@@ -22,7 +21,6 @@ Or install the development version from GitHub:
 
 ```r
 # install.packages("devtools")
-devtools::install_github("merwanroudane/mvardlurt")
 ```
 
 ## Usage
@@ -71,4 +69,3 @@ GPL (>= 3)
 
 ## Author
 
-Merwan Roudane (merwanroudane920@gmail.com)
