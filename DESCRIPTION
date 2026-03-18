@@ -1,7 +1,7 @@
 Package: mvardlurt
 Type: Package
 Title: Multivariate ARDL Unit Root Test
-Version: 1.0.0
+Version: 1.0.2
 Authors@R: c(
     person("Muhammad", "Alkhalaf", 
            email = "muhammedalkhalaf@gmail.com",

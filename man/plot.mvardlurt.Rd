@@ -6,7 +6,7 @@ Creates diagnostic plots for the multivariate ARDL unit root test.
 }
 \usage{
 \method{plot}{mvardlurt}(x, which = c(1, 2, 3, 4),
-     ask = (length(which) > 1 && dev.interactive), \dots)
+     ask = (length(which) > 1 && dev.interactive()), \dots)
 }
 \arguments{
 \item{x}{An object of class \code{"mvardlurt"}.}
