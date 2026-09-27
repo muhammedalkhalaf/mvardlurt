@@ -16,5 +16,5 @@ This is a new package with no downstream dependencies.
 
 This package implements the multivariate ARDL unit root test proposed by 
 Sam, McNown, Goh, and Goh (2024) in Studies in Economics and Econometrics.
-The DOI (10.1080/03796205.2024.2359577) is included in the Description and
+The DOI (10.1080/03796205.2024.2439101) is included in the Description and
 documentation.
