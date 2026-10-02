@@ -17,7 +17,7 @@ Creates diagnostic plots for the multivariate ARDL unit root test.
     \item \code{2}: Q-Q plot of residuals
     \item \code{3}: Residuals over time
     \item \code{4}: ACF of residuals
-    \item \code{5}: Time series of y and x
+    \item \code{5}: Time series of y and the covariates
     \item \code{6}: Information criterion surface
   }
   Default is \code{c(1, 2, 3, 4)}.}
@@ -36,7 +36,7 @@ n <- 100
 x <- cumsum(rnorm(n))
 y <- 0.5 * x + rnorm(n, sd = 0.5)
 
-result <- mvardlurt(y, x, reps = 100)
+result <- mvardlurt(y, x, maxlag = 3, nboot = 99)
 
 # Default diagnostic plots
 plot(result, ask = FALSE)

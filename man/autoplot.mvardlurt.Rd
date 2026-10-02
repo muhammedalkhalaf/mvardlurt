@@ -22,7 +22,7 @@ n <- 100
 x <- cumsum(rnorm(n))
 y <- 0.5 * x + rnorm(n, sd = 0.5)
 
-result <- mvardlurt(y, x, reps = 100)
+result <- mvardlurt(y, x, fixlag = c(2, 2), nboot = 99)
 autoplot.mvardlurt(result)
 }
 \seealso{

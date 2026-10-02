@@ -9,7 +9,7 @@
 #'     \item \code{2}: Q-Q plot of residuals
 #'     \item \code{3}: Residuals over time
 #'     \item \code{4}: ACF of residuals
-#'     \item \code{5}: Time series of y and x
+#'     \item \code{5}: Time series of y and the covariates
 #'     \item \code{6}: Information criterion surface
 #'   }
 #'   Default is \code{c(1, 2, 3, 4)}.
@@ -69,17 +69,20 @@ plot.mvardlurt <- function(x, which = c(1, 2, 3, 4),
 
     } else if (w == 5) {
       # Time series plot
-      par(mfrow = c(2, 1), mar = c(4, 4, 3, 1))
+      k <- ncol(x$x)
+      par(mfrow = c(k + 1, 1), mar = c(4, 4, 3, 1))
 
       plot(x$y, type = "l",
            xlab = "Observation", ylab = "y",
-           main = "Dependent Variable (y)",
+           main = "Series under test (y)",
            col = "steelblue", lwd = 1.5, ...)
 
-      plot(x$x, type = "l",
-           xlab = "Observation", ylab = "x",
-           main = "Independent Variable (x)",
-           col = "darkgreen", lwd = 1.5, ...)
+      for (j in seq_len(k)) {
+        plot(x$x[, j], type = "l",
+             xlab = "Observation", ylab = colnames(x$x)[j],
+             main = paste0("Covariate (", colnames(x$x)[j], ")"),
+             col = "darkgreen", lwd = 1.5, ...)
+      }
 
       par(mfrow = c(1, 1))
 
@@ -90,17 +93,17 @@ plot.mvardlurt <- function(x, which = c(1, 2, 3, 4),
         ic_name <- toupper(x$ic)
 
         # Create heatmap
-        image(x = 0:(nrow(ic_mat) - 1),
-              y = 0:(ncol(ic_mat) - 1),
+        image(x = seq_len(nrow(ic_mat)),
+              y = seq_len(ncol(ic_mat)),
               z = ic_mat,
-              xlab = "p (lags of dy)",
-              ylab = "q (lags of dx)",
+              xlab = "p (ARDL order of y)",
+              ylab = "q (ARDL order of x)",
               main = paste(ic_name, "Values for ARDL(p, q)"),
               col = heat.colors(12, rev = TRUE), ...)
 
         # Add grid lines
-        abline(h = 0:(ncol(ic_mat) - 1) - 0.5, col = "gray80", lty = 3)
-        abline(v = 0:(nrow(ic_mat) - 1) - 0.5, col = "gray80", lty = 3)
+        abline(h = seq_len(ncol(ic_mat)) - 0.5, col = "gray80", lty = 3)
+        abline(v = seq_len(nrow(ic_mat)) - 0.5, col = "gray80", lty = 3)
 
         # Mark optimal
         points(x$opt_p, x$opt_q, pch = 4, cex = 2, lwd = 3, col = "blue")

@@ -29,8 +29,9 @@ Print, summary, and accessor methods for objects of class \code{"mvardlurt"}.
 \value{
 \code{print} and \code{summary} invisibly return \code{x}/\code{object}.
 
-\code{coef} returns a named numeric vector with \code{pi}, \code{delta},
-and \code{lr_mult}.
+\code{coef} returns a named numeric vector with \code{b1}, the
+\code{beta2} coefficient of each covariate and the corresponding long-run
+multipliers \code{lr_mult}.
 
 \code{residuals} returns the numeric vector of residuals from the fitted model.
 
@@ -42,7 +43,7 @@ n <- 100
 x <- cumsum(rnorm(n))
 y <- 0.5 * x + rnorm(n, sd = 0.5)
 
-result <- mvardlurt(y, x, reps = 100)
+result <- mvardlurt(y, x, fixlag = c(2, 2), nboot = 99)
 
 # Print method
 print(result)
