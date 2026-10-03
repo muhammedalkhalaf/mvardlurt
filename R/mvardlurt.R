@@ -57,6 +57,23 @@
 #' bootstrap p-values are the proportions of bootstrap statistics at least as
 #' extreme as the observed ones.
 #'
+#' The lag orders p and q of the bootstrap are those of the test regression,
+#' either fixed through \code{fixlag} or selected by AIC or BIC on the observed
+#' data. They are held fixed in every bootstrap replication: the restricted
+#' regression is estimated with these orders and the unrestricted regression
+#' is re-estimated on \eqn{(y^*, x)} with the same orders, and the lag
+#' selection is not repeated on the bootstrap samples. This follows Section
+#' 4.2 of the paper, where the restricted regression (24) is estimated with
+#' the lag length of the data generating process and equation (1) is
+#' re-estimated on \eqn{y^*_t} and \eqn{x_t}. When the orders are selected
+#' from the data, the bootstrap distribution therefore does not reflect the
+#' selection step. In a Monte Carlo experiment by the package author (n = 100,
+#' y and x independent random walks, 200 replications, 199 bootstrap
+#' replications, 5 percent level) the rejection frequencies of the bootstrap
+#' tests were 0.055 to 0.070 with fixed lag orders and 0.080 to 0.100 with
+#' AIC selection (Monte Carlo standard error about 0.02). Fixing the orders
+#' through \code{fixlag} avoids this source of size distortion.
+#'
 #' The decision at significance level \code{level} classifies the series
 #' according to the four cases of Section 3.2 of the paper:
 #' \itemize{
