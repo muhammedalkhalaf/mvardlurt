@@ -1,19 +1,13 @@
 # mvardlurt 1.1.1
 
-* Documentation only; no computation changed and all results are identical
-  to 1.1.0. The help page of `mvardlurt()` (Details) and the README now state
-  that the lag orders p and q of the bootstrap are those of the test
-  regression (fixed through `fixlag` or selected by AIC or BIC on the
-  observed data) and are held fixed in every bootstrap replication; the lag
-  selection is not repeated on the bootstrap samples. This follows Section
-  4.2 of Sam, McNown, Goh and Goh (2025), where the restricted regression
-  (24) is estimated with the lag length of the data generating process and
-  equation (1) is re-estimated on y* and x. The help page also reports a
-  Monte Carlo experiment by the package author (n = 100, y and x
-  independent random walks, 200 replications, 199 bootstrap replications,
-  5 percent level): rejection frequencies 0.055 to 0.070 with fixed lag
-  orders and 0.080 to 0.100 with AIC selection (Monte Carlo standard error
-  about 0.02).
+* Documentation only; computations and results are identical to 1.1.0.
+* Help page of `mvardlurt()` (Details) and README: the lag orders p and q
+  used in the bootstrap are stated to be those of the test regression
+  (given by `fixlag` or selected by AIC or BIC on the observed data) and to
+  be held fixed in every bootstrap replication.
+* Help page of `mvardlurt()`: rejection frequencies of the bootstrap tests
+  from a Monte Carlo experiment (n = 100, 200 replications) are reported
+  for fixed and AIC-selected lag orders.
 
 # mvardlurt 1.1.0
 

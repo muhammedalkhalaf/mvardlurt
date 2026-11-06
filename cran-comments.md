@@ -1,26 +1,20 @@
 ## mvardlurt 1.1.1
 
-This is a documentation-only update; the version on CRAN is 1.1.0. There is no numerical change: all statistics, critical values, p-values and decisions are identical to 1.1.0.
+CRAN version: 1.1.0.
 
-* Documentation only; no computation changed and all results are identical
-  to 1.1.0. The help page of `mvardlurt()` (Details) and the README now state
-  that the lag orders p and q of the bootstrap are those of the test
-  regression (fixed through `fixlag` or selected by AIC or BIC on the
-  observed data) and are held fixed in every bootstrap replication; the lag
-  selection is not repeated on the bootstrap samples. This follows Section
-  4.2 of Sam, McNown, Goh and Goh (2025), where the restricted regression
-  (24) is estimated with the lag length of the data generating process and
-  equation (1) is re-estimated on y* and x. The help page also reports a
-  Monte Carlo experiment by the package author (n = 100, y and x
-  independent random walks, 200 replications, 199 bootstrap replications,
-  5 percent level): rejection frequencies 0.055 to 0.070 with fixed lag
-  orders and 0.080 to 0.100 with AIC selection (Monte Carlo standard error
-  about 0.02).
+### Changes
 
-## Test environments
+* Documentation only; computations and results are identical to 1.1.0.
+* Help page of mvardlurt() (Details) and README: the lag orders p and q used in the bootstrap are stated to be those of the test regression and to be held fixed in every bootstrap replication.
+* Help page of mvardlurt(): rejection frequencies of the bootstrap tests from a Monte Carlo experiment (n = 100, 200 replications) are reported for fixed and AIC-selected lag orders.
 
-* Ubuntu 24.04, R 4.3.3 and R-devel, R CMD check --as-cran
+### Test environments
 
-## R CMD check results
+* Local: R 4.3.3 on Linux (x86_64), R CMD check --as-cran.
+* win-builder: R-devel (2026-10-30 r90805 ucrt), Status OK.
 
-0 errors | 0 warnings | 0 notes
+### R CMD check results
+
+R CMD check --as-cran on R 4.3.3 (Linux, LANG=C.UTF-8, _R_CHECK_SYSTEM_CLOCK_=0): 0 errors, 0 warnings, 1 NOTE. The NOTE is from the network check: the build environment could not reach doi.org or github.com (proxy refused the connection), so the URLs were reported as possibly invalid; the DOI was verified separately through the CrossRef API.
+
+win-builder, R-devel: Status OK for the same sources with Date 2026-11-01.
